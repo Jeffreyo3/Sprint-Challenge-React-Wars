@@ -11,7 +11,10 @@ const App = () => {
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
 
-  
+
+
+
+  // Get people data, set data to new state
   const [peopleState, setPeopleState] = useState("");    
 
   useEffect(() => {
@@ -30,10 +33,10 @@ const App = () => {
   const charArray = Array.from(peopleState);
   
 
-
+  // .map() array and assign to values to be accessed through props
   return (
     <div className="App">
-      <h1 className="Header">React Wars</h1>
+      <h1 className="Header">React Wars: Star Wars Characters Data</h1>
       <div id="characterContainer">
         {charArray.map(person => (
           <Character key={person.name} name={person.name} height={person.height} mass={person.mass} hairColor={person.hair_color} eyeColor={person.eye_color} gender={person.gender} homeworld={person.homeworld} species={person.species}/>
